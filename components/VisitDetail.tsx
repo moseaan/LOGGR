@@ -137,7 +137,7 @@ const VisitDetail: React.FC<VisitDetailProps> = ({ visit, onBack, onEdit, onDele
             <DetailRow icon={<CalendarPlusIcon className="w-5 h-5" />} label="Revisit Date" value={formattedRevisitDate || 'Not set'} />
             <DetailRow icon={<DocumentIcon className="w-5 h-5" />} label="Notes">
               <p className="whitespace-pre-wrap text-brand-dark-gray dark:text-gray-200">{visit.notes || 'No notes added.'}</p>
-            </d-etailrow>
+            </DetailRow>
         </div>
       </main>
     </div>
