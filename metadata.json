@@ -1,0 +1,7 @@
+{
+  "name": "Business Visit Logger",
+  "description": "A simple web application to log business visits. It allows you to create, view, edit, and delete visit records. You can also import and export your visit data for backup or transfer, all without needing a backend.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

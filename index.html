@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>LOGGR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#007AFF',
+              'brand-light-gray': '#F2F2F7',
+              'brand-gray': '#636366',
+              'brand-dark-gray': '#1C1C1E',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.2s ease-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* The accent-color will be a fallback if our custom styles fail */
+      input[type='checkbox'], input[type='radio'] {
+        accent-color: #007AFF;
+      }
+
+      /* --- Custom Checkbox & Radio Styles --- */
+      
+      /* 1. Reset browser default appearance */
+      input[type='checkbox'], input[type='radio'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        /* 2. Define size and basic properties */
+        width: 1.15em;
+        height: 1.15em;
+        border-width: 2px;
+        border-style: solid;
+        display: inline-block;
+        vertical-align: -0.2em; /* Align better with text */
+        position: relative;
+        cursor: pointer;
+        margin: 0;
+        flex-shrink: 0;
+      }
+
+      /* 3. Shape them */
+      input[type='radio'] {
+        border-radius: 50%;
+      }
+      input[type='checkbox'] {
+        border-radius: 4px;
+      }
+      
+      /* 4. Define light mode (default) colors */
+      input[type='checkbox'],
+      input[type='radio'] {
+        border-color: #AEAEB2; /* A neutral gray */
+        background-color: #FFFFFF;
+      }
+
+      /* 5. Define dark mode colors for the *inside* of the unchecked control */
+      .dark input[type='checkbox'],
+      .dark input[type='radio'] {
+        border-color: #636366; /* brand-gray */
+        background-color: #3a3a3c; /* A dark gray for the inside */
+      }
+
+      /* --- Checked State Styles --- */
+
+      /* 6. Change background and border when checked */
+      input[type='checkbox']:checked,
+      input[type='radio']:checked {
+        border-color: #007AFF;
+        background-color: #007AFF;
+      }
+      
+      .dark input[type='checkbox']:checked,
+      .dark input[type='radio']:checked {
+        border-color: #0A84FF; /* A slightly brighter blue for dark backgrounds */
+        background-color: #0A84FF;
+      }
+      
+      /* 7. Create the indicator (dot or checkmark) */
+      input[type='radio']:checked::after {
+        content: '';
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      input[type='checkbox']:checked::after {
+        content: '';
+        display: block;
+        width: 0.25em;
+        height: 0.5em;
+        border-style: solid;
+        border-color: white; /* The checkmark itself is white */
+        border-width: 0 0.18em 0.18em 0;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-light-gray dark:bg-black">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
